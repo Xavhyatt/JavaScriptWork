@@ -1,0 +1,36 @@
+<html>
+<head>
+<h2> Strings 1 & 2  </h2>
+</head>
+
+<body>
+<div>
+
+<p id="demo"></p>
+<button type="submit" onclick=upper()> Make Capital </button> <br>
+<input type="number" placeholder="How old is he?" id="age"></>
+<button type="submit" onclick=enterAge()> Enter Age </button>
+
+</div>
+</body>
+
+
+<script>
+var str = " He said 'My name is Elliott and I'm ' ";
+document.getElementById("demo").innerHTML = str;
+
+function upper(){
+var str1 = str.toUpperCase();
+document.getElementById("demo").innerHTML = str1;
+var m1= "Text Capitalized";
+window.alert(m1);
+str = str1;
+}
+
+function enterAge(){
+var age = document.getElementById("age").value;
+document.getElementById("demo").innerHTML = str + age;
+}
+
+</script>
+</html>

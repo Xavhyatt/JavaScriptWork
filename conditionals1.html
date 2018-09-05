@@ -1,0 +1,35 @@
+<html>
+<head>
+<h1> Conditionals 1 </h1>
+</head>
+
+<body>
+<p id="demo"></p>
+<button type="submit" onclick=checkAge()> Check Age </button>
+
+
+
+</body>
+
+
+<script>
+//create a object
+
+var p1 = {
+name: "Tom",
+age: 22,
+occupation: "Student"};
+
+
+function checkAge(){
+
+for( var age in p1){
+	if (p1.age>20 & p1.age<40){
+	window.alert("True");}
+	else{
+	window.alert("False");
+	}
+	}
+	}
+</script>
+</html>

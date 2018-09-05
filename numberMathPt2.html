@@ -1,0 +1,108 @@
+<html>
+<head>
+
+<h1> Working with 2 numbers pt2 <h1>
+</head>
+<body>
+
+<div>
+
+<input type="number" placeholder="Input Number 1!" id="val1" /> 
+
+<input type="number" placeholder="Input Number 2!" id="val2" />  <br>
+
+<input type="number" placeholder="result" id="val3" /> <br>
+<p id="result"></p>
+
+<button type="submit" onclick=addition()> Add </button> 
+<button type="submit" onclick=subtract()> Subtract </button> 
+<button type="submit" onclick=multiply()> Multiply </button>
+<button type="submit" onclick=divide()> Divide </button>
+
+</div>
+
+
+<script>
+var er1 = "Please input First Number";
+var er2 = "Please input Second Number";
+var er3 = "No input values detected";
+
+function addition(){
+var val1= parseInt(document.getElementById("val1").value);
+var val2= parseInt(document.getElementById("val2").value);
+if(isNaN(val1) & isNaN(val2)){
+	alert(er3)}
+	if (isNaN(val1)){
+	alert(er1)}
+	if (isNaN(val2)){
+	alert(er2)}
+	else{
+	var val3 = val1 + val2;
+	document.getElementById("val3").value = val3;
+	}
+	}
+	
+	
+
+
+function subtract(){
+var val1= parseInt(document.getElementById("val1").value);
+var val2= parseInt(document.getElementById("val2").value);
+if(isNaN(val1) & isNaN(val2)){
+	alert(er3)}
+	if (isNaN(val1)){
+	alert(er1)}
+	if (isNaN(val2)){
+	alert(er2)}
+	else{
+	var val3 = val1 - val2;
+	document.getElementById("val3").value = val3;
+	}
+	}
+	
+
+function multiply(){
+var val1= parseInt(document.getElementById("val1").value);
+var val2= parseInt(document.getElementById("val2").value);
+if(isNaN(val1) & isNaN(val2)){
+	alert(er3)}
+	if (isNaN(val1)){
+	alert(er1)}
+	if (isNaN(val2)){
+	alert(er2)}
+	else{
+	var val3 = val1 * val2;
+	document.getElementById("val3").value = val3;
+	}
+	}
+	
+
+function divide(){
+var val1= parseInt(document.getElementById("val1").value);
+var val2= parseInt(document.getElementById("val2").value);
+if(isNaN(val1) & isNaN(val2)){
+	alert(er3)}
+	if (isNaN(val1)){
+	alert(er1)}
+	if (isNaN(val2)){
+	alert(er2)}
+	else{
+	var val3 = val1 / val2;
+	document.getElementById("val3").value = val3;
+	}
+	}
+	
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+<head>
+Variables 2 / Events 1 & 2 / Functions 3
+</head>
+
+<body>
+<div>
+<p id="demo"></p> <br>
+<input type="string" placeholder="enter new name" id="name" </> <br>
+<button type="submit" onclick=newName()> Update Name </button>
+<button type="submit" onclick=newAge()> Update Age </button>
+<button type="submit" onclick=newJob()> Update Job </button>
+
+<script>
+//create a object
+
+var p1 = {
+name: "Tom",
+age: 22,
+occupation: "Student"};
+
+
+document.getElementById("demo").innerHTML = p1.name + " " + p1.age + " " + p1.occupation;
+
+
+function newName(){
+var m1 = "Name has been changed";
+p1.name = (document.getElementById("name").value);
+window.alert(m1);
+document.getElementById("demo").innerHTML = p1.name + " " + p1.age + " " + p1.occupation;
+}
+
+function newAge(){
+var m2 = "Age has been changed";
+p1.age = (document.getElementById("name").value);
+window.alert(m2);
+document.getElementById("demo").innerHTML = p1.name + " " + p1.age + " " + p1.occupation;
+}
+
+function newJob(){
+var m3 = "Occupation has been changed";
+p1.occupation = (document.getElementById("name").value);
+window.alert(m3);
+document.getElementById("demo").innerHTML = p1.name + " " + p1.age + " " + p1.occupation;
+}
+
+
+
+
+</script>
+
+</body>
+</html>
+
+

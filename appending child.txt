@@ -1,0 +1,9 @@
+var para = document.createElement("p");
+
+var app = "dfhal;jka;lj";
+
+para.appendChild(document.createTextNode(app);
+
+var element = document.getElementById("demo");
+
+element.appendChild(para);

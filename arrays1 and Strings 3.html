@@ -1,0 +1,41 @@
+<html>
+<head>
+<h1> Arrays 1 & Strings 3 </h1>
+</head>
+
+<body>
+<div>
+
+<p id="demo"></p>
+<input type="string" placeholder="what else belongs on a fry up?" id="food"></><br>
+<button type="submit" onclick=addFood()> Add Food </button>
+<button type="submit" onclick=removeLast()> Remove Last </button>
+
+</div>
+</body>
+
+<script>
+
+var arr = ["bacon", "sausage", "egg"];
+
+document.getElementById("demo").innerHTML = arr;
+
+function addFood(){
+var m1= "Item Added!";
+var f1= (document.getElementById("food").value);
+arr.push(f1);
+window.alert(m1);
+document.getElementById("demo").innerHTML = arr;
+}
+
+function removeLast(){
+var m2 = "Item Removed";
+arr.pop();
+window.alert(m2);
+document.getElementById("demo").innerHTML = arr;
+}
+
+
+
+</script>
+</html>

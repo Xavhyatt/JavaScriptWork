@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<h1> Follow the Mouse EXTRA</h1>
+</head>
+
+
+<body onmousemove=placeDiv()>
+<input type="string" value="Mouse" id="text" onmouseover=changeWord()></> <br><br>
+<input type="string" value="Blue" id="blue" onmouseover=changeColorB()></> <br><br>
+<input type="string" value="Red" id="red" onmouseover=changeColorR()></> <br><br>
+<input type="string" value="Green" id="green" onmouseover=changeColorG()></> <br><br>
+<input type="string" value="Purple" id="purple" onmouseover=changeColorP()></> <br><br>
+<input type="string" value="Switch Background" id="bg" onmouseover=switchBG()></> <br><br>
+<input type="string" value="Visibility" id="vis" onmouseover=visibility()></> <br><br>
+
+
+
+<div id="txt">
+<p id="demo" style="fontsize=FS" fontcolor = "color" background-color= "bgColor" > Cat</p>
+</div>
+
+</body>
+
+
+<script>
+
+var FS=100;
+var txt = document.getElementById("demo");
+
+function changeWord(){
+
+var word = document.getElementById("text").value;
+document.getElementById("demo").innerHTML = word;
+
+if (word == "Mouse"){
+	document.getElementById("text").value = "Cat"
+	}
+	else {
+	document.getElementById("text").value = "Mouse"
+	}
+}
+
+
+function placeDiv(){
+var x_pos = event.clientX;
+var y_pos = event.clientY;
+
+txt.style.position= "absolute";
+txt.style.left = x_pos + "px";
+txt.style.top = y_pos + "px";
+
+if (event.ctrlKey){
+FS = FS + 5;
+txt.style.fontSize = (FS) + "%";
+}
+if (event.altKey){FS = FS-5
+txt.style.fontSize= (FS) + "%";
+}
+}
+
+function changeColorB(){
+
+txt.style.color = "blue";
+}
+
+function changeColorR(){
+
+txt.style.color = "red";
+}
+function changeColorG(){
+
+txt.style.color = "green";
+}
+
+function changeColorP(){
+
+txt.style.color = "#800080";
+}
+
+function switchBG(){
+
+if(txt.style.background == "black"){
+txt.style.background="";
+}
+else {
+txt.style.background= "black";
+}
+}
+
+function visibility(){
+
+if (txt.style.visibility=="hidden"){
+txt.style.visibility = "visible";
+}
+else{
+txt.style.visibility="hidden";
+}
+}
+
+</script>
+</html>
+

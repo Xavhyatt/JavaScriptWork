@@ -1,0 +1,57 @@
+<html>
+
+<head>
+<h1> Follow the Mouse </h1>
+</head>
+
+
+<body onmousemove=placeDiv()>
+<input type="string" placeholder="Input Text" id="text" onmouseover=changeWord()></>
+
+
+
+<div id="txt">
+<p id="demo" style="fontsize=FS" ></p>
+</div>
+
+</body>
+
+
+<script>
+
+var FS=100;
+var txt;
+
+function changeWord(){
+var word = document.getElementById("text").value;
+document.getElementById("demo").innerHTML = word;
+}
+
+
+
+function placeDiv(){
+var x_pos = event.clientX;
+var y_pos = event.clientY;
+txt = document.getElementById("demo");
+txt.style.position= "absolute";
+txt.style.left = x_pos + "px";
+txt.style.top = y_pos + "px";
+
+if (event.ctrlKey){
+FS = FS + 5;
+txt.style.fontSize = (FS) + "%";
+}
+if (event.altKey){FS = FS-5
+txt.style.fontSize= (FS) + "%";
+}
+
+}
+
+
+
+
+
+
+</script>
+</html>
+

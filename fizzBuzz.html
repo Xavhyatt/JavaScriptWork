@@ -1,0 +1,57 @@
+<html>
+<head>
+<h1> Fizz Buzz </h1>
+</head>
+
+<body>
+<button type="submit" onclick=fizzBuzz()> Lets FizzBuzz! </button>
+<input type="number" placeholder="Count to?" default= 100 id="limit"></>
+<input type="string" placeholder="If Divisible by 3 say...?" default="Fizz" id="by3"></>
+<input type="string" placeholder="If Divisible by 5 say...?" default="Buzz" id="by5"></>
+<p id="demo"></p>
+
+</body>
+
+<script>
+function fizzBuzz(){
+
+var para = document.createElement("p");
+
+var app = "";
+
+
+var str=" " 
+var li = document.getElementById("limit").value;
+for (var i = 1 ; i<li ; i++){
+	if (i%3 == 0 && i%5 == 0){
+		var m1 = document.getElementById("by3").value + document.getElementById("by5").value;
+		var element = document.getElementById("demo").value;
+		ele = createElement(m1);
+		element.appendChild(ele);
+	}
+		
+	else if (i%3 == 0){
+		var m2 = document.getElementById("by3").value;
+		var element = document.getElementById("demo").value;
+		element.appendChild(m2);
+	}
+	
+	else if(i%5 == 0){
+		var m3 = document.getElementById("by5").value;
+		var element = document.getElementById("demo").value;
+		element.appendChild(m3);
+	}
+	else {
+	var element = document.getElementById("demo").value;
+		element.appendChild(i);
+
+}
+}
+}
+
+
+
+
+</script>
+</html>
+

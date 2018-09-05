@@ -1,0 +1,21 @@
+<html>
+<head>
+Square a number
+</head>
+
+<body>
+<div>
+Number
+<input type="number" placeholder="Input Number" id="val1" /> <br>
+<input type="number" placeholder="Result" id="res" /> <br>
+<button type="submit" onclick=square()> Square </button>
+</div>
+</body>
+
+<script>
+function square(){
+var val1= parseInt(document.getElementById("val1").value);
+var result= Math.pow(val1,2);
+document.getElementById("res").value = result;
+}
+</script>
