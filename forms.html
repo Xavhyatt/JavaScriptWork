@@ -1,0 +1,50 @@
+<html>
+<head>
+<h1> Form </h1>
+</head>
+
+<body>
+<form name="form" onsubmit="return doIt()" action="abc.html" >
+First Name: 
+<input type="text" placeholder="Joe" id="1name"></> <br>
+Second Name: 
+<input type="text" placeholder="Bloggs" id="2name"></> <br>
+Email: 
+<input type="text" placeholder="JB@email.com" id="email"></> <br>
+<button type="Submit"> Submit </button>
+</form>
+</body>
+<script>
+
+
+function doIt() {
+	var name1 = document.getElementById("1name").value;
+	var name2 = document.getElementById("2name").value;
+	var email = document.getElementById("email").value;
+	
+	var nameCheck = /^[A-Za-z]+$/;
+	var mailCheck = /\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}/;
+	
+	if(name1 == "" | name2 == "" | email == ""){
+		alert("Field Empty");
+		console.log("Field is empty");
+		return false;
+		}
+	 if ( !(name1.match(nameCheck)) | !(name2.match(nameCheck))){
+		console.log("Tried to use Illegal Character");
+		alert("Illegal Character");
+		return false;
+		}
+	if (!(email.match(mailCheck))){
+		console.log("Invalid Email");
+		alert("Invalid Email");
+		return false;
+		}
+	else {
+	alert("Pass");
+	
+}
+}
+
+</script>
+</html>

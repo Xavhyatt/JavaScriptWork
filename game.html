@@ -1,0 +1,50 @@
+<html>
+
+
+<head>
+<h1> Game </h1>
+</head>
+
+<body onmousemove=moveGun()>
+
+
+<div id="gun1">
+<p id="gun">db</p>
+</div>
+
+</body>
+
+<script>
+
+var gun;
+
+function moveGun(){
+
+var x_pos = event.clientX;
+var y_pos = event.clientY;
+gun = document.getElementById("gun");
+gun.style.position= "absolute";
+gun.style.left = x_pos + "px";
+gun.style.top = y_pos + "px";
+}
+
+
+function shoot(){
+
+}
+
+
+function generateAlien(){
+
+}
+
+function alienMove(){
+
+}
+
+function destroyAlien(){
+
+}
+
+
+

@@ -1,0 +1,34 @@
+<html>
+<head>
+<h1> JSON </h1>
+</head>
+
+<body>
+<button type="submit"> get</button>
+
+<p id="demo"></p>
+</body>
+<script>
+
+function getJSON(){
+
+var str = "";
+var requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json";
+var request = new XMLHttpRequest();
+request.open("GET", requestURL);
+request.responseType = "JSON";
+request.send();
+request.onload = function(){
+
+	var superHeroes = request.response;
+	
+	var myH1 = document.createElement("h1");
+	myH1.textContent = jsonObj["squadName"];
+	body.appendChild(myH1);
+	
+	
+	
+	
+	
+	window.document.getElementById("demo")[0].appendChild(myH1);
+}

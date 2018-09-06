@@ -1,0 +1,69 @@
+<html>
+
+<head>
+<h1> Space Invaders </h1>
+</head>
+
+
+<body onmousemove=gunMove() onclick=shoot() onload=time()>
+
+
+
+
+<div id="txt">
+<p id="shot"></p>
+<p id="demo" style="top:900px">d.b</p>
+</div>
+
+</body>
+
+
+<script>
+
+
+var gun;
+
+function shoot(){
+
+var shot = document.createElement("p");
+
+var bullet = "|";
+shot.appendChild(document.createTextNode(bullet));
+var element = document.getElementById("demo");
+element.appendChild(shot);
+
+
+document.getElementById("shot").innerHTML = "|"
+var shot = document.getElementById("shot");
+console.log("hey");
+var x_pos1 = event.clientX;
+
+shot.style.position= "absolute";
+shot.style.left= x_pos1 + 8 + "px";
+shot.style.top= 875 + "px";
+
+}
+
+var str = shotArray[i].style.top;
+var str1 = str.splice(str.length
+
+
+function gunMove(){
+var x_pos = event.clientX;
+gun = document.getElementById("demo");
+gun.style.position= "absolute";
+gun.style.left = x_pos + "px";
+
+}
+
+function time(){
+window.setInerval (shoot,100);
+
+}
+
+
+
+
+
+</script>
+</html>

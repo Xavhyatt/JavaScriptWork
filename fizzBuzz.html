@@ -33,17 +33,21 @@ for (var i = 1 ; i<li ; i++){
 	else if (i%3 == 0){
 		var m2 = document.getElementById("by3").value;
 		var element = document.getElementById("demo").value;
+		ele = createElement(m1);
 		element.appendChild(m2);
 	}
 	
 	else if(i%5 == 0){
 		var m3 = document.getElementById("by5").value;
 		var element = document.getElementById("demo").value;
+		ele = createElement(m1);
 		element.appendChild(m3);
+		
 	}
 	else {
 	var element = document.getElementById("demo").value;
-		element.appendChild(i);
+	var app = i;
+		element.appendChild(app);
 
 }
 }
