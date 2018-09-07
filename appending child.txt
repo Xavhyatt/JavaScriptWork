@@ -1,4 +1,4 @@
-var para = document.createElement("p");
+vvar para = document.createElement("p");
 
 var app = "dfhal;jka;lj";
 
@@ -7,3 +7,9 @@ para.appendChild(document.createTextNode(app);
 var element = document.getElementById("demo");
 
 element.appendChild(para);
+
+//var shot = document.createElement("p");
+//var bullet = "|";
+//shot.appendChild(document.createTextNode(bullet));
+//var element = document.getElementById("demo");
+//element.appendChild(shot);

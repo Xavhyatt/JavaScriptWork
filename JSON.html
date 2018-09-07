@@ -4,31 +4,39 @@
 </head>
 
 <body>
-<button type="submit"> get</button>
 
-<p id="demo"></p>
-</body>
+
+
 <script>
 
-function getJSON(){
+
 
 var str = "";
 var requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json";
 var request = new XMLHttpRequest();
 request.open("GET", requestURL);
-request.responseType = "JSON";
+request.responseType = "json";
 request.send();
 request.onload = function(){
 
 	var superHeroes = request.response;
+	console.log(superHeroes);
+	console.log(superHeroes.squadName);
+	console.log(superHeroes.members);
+	console.log(superHeroes.members[0].powers[2]);
 	
-	var myH1 = document.createElement("h1");
-	myH1.textContent = jsonObj["squadName"];
-	body.appendChild(myH1);
+	console.log("------------------------------")
+	
+	for (gg in superHeroes){
+	console.log(gg);				// gets key names
+	console.log(superHeroes[gg]);   // gets values of them keys
+	}
+	}
+	
+
+</script>
+</body>
+</html>
 	
 	
-	
-	
-	
-	window.document.getElementById("demo")[0].appendChild(myH1);
-}
+	 
