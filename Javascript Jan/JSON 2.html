@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <h1> JSON 2 </h1>
+    </head>
+
+    <body>
+
+        <input type="string" placeholder="Search" id="SearchBar">
+        <button type="submit" onclick=searchName()> Search Name </button>
+        <br/>
+         </br>
+        <div> Name :  <p id="name"></p></div>
+        <div> City :  <p id="city"></p></div>
+        <div> House: <p id="house"></p></div>
+        <div> Years: <p id="years"></p></div>
+
+
+
+    </body>
+
+    <script>
+    let requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json";
+    let request = new XMLHttpRequest();
+    request.open("GET", requestURL);
+    request.responseType = "json";
+    request.send();
+    request.onload = function loadArray(){
+        data = request.response;
+        console.log(data);
+    }
+
+    function searchName(){
+        let nameSrc = document.getElementById("SearchBar").value;
+        for (let i=0 ; i<data.length ; i++){
+            if(data[i].nm == nameSrc){
+                document.getElementById("name").innerHTML = data[i].nm;
+                document.getElementById("city").innerHTML = data[i].cty;
+                document.getElementById("house").innerHTML = data[i].hse;
+                document.getElementById("years").innerHTML = data[i].yrs;
+                break;
+            }
+            else{
+                blank();
+            }
+        }
+    }
+    function blank(){
+		
+		document.getElementById("name").innerHTML = "Not Found";
+		document.getElementById("city").innerHTML =  " ";
+		document.getElementById("house").innerHTML =  " ";
+		document.getElementById("years").innerHTML = " ";
+		}
+
+    </script>
+    </html>

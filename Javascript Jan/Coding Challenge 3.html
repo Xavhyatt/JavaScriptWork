@@ -1,0 +1,76 @@
+<html>
+<head>
+<h1> Random Things </h1>
+</head>
+
+<body>
+<div id="main">
+	<button onclick="doit()"> Do IT</button>
+</div>
+<br/>
+<div id="add">
+	<input type="text" id="t1">
+	<input type="text" id="t2">
+	<button onclick="add()"> Add Them</button>
+</div>
+<br/>
+<div id="array">
+	<input type="text" id="t3">
+	<button onclick="arrayTing1()"> add </button>
+	<button onclick="arrayTing2()"> Remove </button>
+	<p id="words"></p>
+</div>
+
+
+</body>
+
+<script>
+var str = "He said \"My name is Matt\"";
+let arr = ["Hi", "My", "Name" ];
+console.log(str);
+function doit(){
+	str = str.toUpperCase();
+	let element = document.getElementById("main");
+	let text = document.createTextNode(str);
+
+	element.appendChild(text);
+}
+
+function add(){
+	let t1 = document.getElementById("t1").value;
+	let t2 = document.getElementById("t2").value;
+	if (!(isNaN(t1)) && !(isNaN(t2))){
+		 res = parseInt(t1) + parseInt(t2);
+	}
+	else{
+
+	res = t1 + t2;
+}
+
+	console.log(res);
+
+	let element1 = document.getElementById("add");
+	let mathRes = document.createTextNode(res);
+
+	element1.appendChild(mathRes);
+}
+
+function arrayTing1(){
+
+	let ar1 = document.getElementById("t3").value;
+	arr.push(ar1);
+
+	document.getElementById("words").innerHTML = arr;
+
+}
+
+function arrayTing2(){
+	arr.pop();
+	document.getElementById("words").innerHTML = arr;
+}
+
+
+	
+</script>
+
+</html>
