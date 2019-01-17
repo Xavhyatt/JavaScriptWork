@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title> Calculator</title>
+    </head>
+
+    <body>
+
+
+        <input type="text" id="screen" value=""></input><br/>
+        <button id="1" onclick="numberPress(1)"> 1 </button>
+        <button id="2" onclick="numberPress(2)"> 2 </button>
+        <button id="3" onclick="numberPress(3)"> 3 </button> <br/>
+        <button id="4" onclick="numberPress(4)"> 4 </button>
+        <button id="5" onclick="numberPress(5)"> 5 </button>
+        <button id="6" onclick="numberPress(6)"> 6 </button> <br/>
+        <button id="7" onclick="numberPress(7)"> 7 </button>
+        <button id="8" onclick="numberPress(8)"> 8 </button>
+        <button id="9" onclick="numberPress(9)"> 9 </button> <br/>
+        <button id="0" onclick="numberPress(0)"> 0 </button> <br/>
+        <button id="+" onclick="operatorPress('+')"> + </button>
+        <button id="-" onclick="operatorPress('-')"> - </button> <br/>
+        <button id="/" onclick="operatorPress('/')"> / </button> <br/>
+        <button id="*" onclick="operatorPress('*')"> * </button> <br/>
+        <button id="*" onclick="operatorPress('=')"> = </button> <br/>
+        <button id="C" onclick="ca()"> C </button> <br/>
+
+
+
+
+
+
+
+    </body>
+
+    <script>
+        var str;
+        var str1 = 0;
+        var opr;
+
+    function numberPress(a){
+
+        let screen = document.getElementById("screen").value;
+        str = screen + a;
+        document.getElementById("screen").value = str;  
+        
+
+
+    }
+
+    function operatorPress(op){
+      
+        
+        if(op == "+"){
+            opr = op;
+            str1 =  parseInt(str1) + parseInt(document.getElementById("screen").value);
+            str ="";
+        document.getElementById("screen").value = str;
+        }
+        if(op == "-"){
+            opr=op;
+            str1 =  parseInt(str1) - parseInt(document.getElementById("screen").value);
+            str ="";
+        document.getElementById("screen").value = str;
+        }
+        if(op == "/"){
+            opr=op;
+            str1 =  parseInt(str1) / parseInt(document.getElementById("screen").value);
+            str ="";
+        document.getElementById("screen").value = str;
+        }
+        if(op == "*"){
+            opr=op;
+            str1 =  parseInt(str1) * parseInt(document.getElementById("screen").value);
+            str ="";
+        document.getElementById("screen").value = str;
+        }
+        if(op == "="){
+            if(opr == "+"){
+            str1 =  parseInt(str1) + parseInt(document.getElementById("screen").value);
+           
+            }
+            if(opr == "-"){
+            str1 =  parseInt(str1) - parseInt(document.getElementById("screen").value);
+            }
+            if(opr == "/"){
+            str1 =  parseInt(str1) / parseInt(document.getElementById("screen").value);
+            }
+            if(opr == "*"){
+            str1 =  parseInt(str1) * parseInt(document.getElementById("screen").value);
+            
+        }
+        document.getElementById("screen").value = str1;
+    }
+    }
+
+
+    function ca(){
+        console.log("HI");
+        str1=0;
+        str="";
+        document.getElementById("screen").value = "";
+    }
+    </script>
+</html>
