@@ -42,7 +42,35 @@ function showLogIn() {
     document.getElementById("accountAccessLog").style.display = "block";
 }
 
-
+function showPickOfTheWeek(){
+	
+	let potw = document.getElementById("pickOfTheWeek");
+    if (potw.style.display === "none") {
+        potw.style.display = "block";
+    }
+    else {
+        potw.style.display = "none";
+    }
+	document.getElementById("allFilmList").style.display = "none";
+	let potwInfo = "http://www.omdbapi.com/?apikey=50d432c1&i=tt1133985&plot=full";
+	
+	 let request = new XMLHttpRequest();
+    request.open("GET", potwInfo);
+    request.responseType = "json";
+    request.send();
+	request.onload = function () {
+        let starFilm = request.response;
+		 
+	
+	console.log(starFilm);
+	document.getElementById("potw Title").innerHTML = starFilm.Title;
+	document.getElementById("Rating").innerHTML = "Rated: " + starFilm.Rated;
+	document.getElementById("actors").innerHTML = "Starring: " + starFilm.Actors;
+	document.getElementById("plot").innerHTML = "Plot: " + starFilm.Plot;
+	
+	
+	}
+}
 
 
 var movies = [];
@@ -51,7 +79,8 @@ var srcRes = [];
 
 
 function filmList() {
-
+	
+	
     let filmList = document.getElementById("allFilmList");
     if (filmList.style.display === "none") {
         filmList.style.display = "block";
@@ -59,6 +88,7 @@ function filmList() {
     else {
         filmList.style.display = "none";
     }
+	document.getElementById("pickOfTheWeek").style.display = "none";
     loadFilms("search");
 }
 
@@ -77,13 +107,13 @@ function loadFilms(a) {
     let requestURL;
 
     if (srcReq == "" && ratingFilter == "All") {
-        requestURL = "http://localhost:8080/api/film";
+        requestURL = "http://192.168.1.106:8080/api/film";
     }
     if(ratingFilter=="All"){
-        requestURL = "http://localhost:8080/api/film/" + srcReq + "&";
+        requestURL = "http://192.168.1.106:8080/api/film/" + srcReq + "&";
     }
     else {
-        requestURL = "http://localhost:8080/api/film/" + srcReq + "&" + ratingFilter;
+        requestURL = "http://192.168.1.106:8080/api/film/" + srcReq + "&" + ratingFilter;
     }
 
     let request = new XMLHttpRequest();
@@ -140,10 +170,35 @@ function loadFilms(a) {
 
         if (films.length == 0) {
             document.getElementById("message").innerHTML = "No Film Found!";
-        }
+        } else {
+			    document.getElementById("message").innerHTML = "";
+		}
+		
     }
 }
+
+function buttonOn1(){
+
+	document.getElementById("card1Btn").style.background="green";
+	document.getElementById("card1Btn").style.color="white";
+}
+function buttonOff1(){
+	document.getElementById("card1Btn").style.background="white";
+	document.getElementById("card1Btn").style.color="green";
+}
+
+function buttonOn2(){
+
+	document.getElementById("card3Btn").style.background="red";
+	document.getElementById("card3Btn").style.color="white";
+}
+function buttonOff2(){
+	document.getElementById("card3Btn").style.background="white";
+	document.getElementById("card3Btn").style.color="red";
+}
+
 function goToGame(){
+	showHome();
     document.getElementById("allFilmList").style.display = "none";
     document.getElementById("welcome").innerHTML = "Blockbuster Game";
     document.getElementById("welcome1").innerHTML = "Find what we have in stock for all Gaming Platforms!";
@@ -151,14 +206,30 @@ function goToGame(){
     document.getElementById("caro2").setAttribute("src" , "starfield.jpg");
     document.getElementById("caro3").setAttribute("src" , "hitman.jpg");
     document.getElementById("caro4").setAttribute("src" , "anthem.jpg");
-    document.getElementById("card1Title").innerHTML = "PlayStation";
-    document.getElementById("card2Title").innerHTML = "Xbox";
+    document.getElementById("card1Title").innerHTML = "Xbox";
+    document.getElementById("card2Title").innerHTML = "Playstation";
     document.getElementById("card3Title").innerHTML = "Nintendo";
     document.getElementById("card1Img").setAttribute("src", "xbox.png");
     document.getElementById("card1Img").setAttribute("width", "auto");
     document.getElementById("card2Img").setAttribute("src", "PS.png");
     document.getElementById("card3Img").setAttribute("src", "nintendo.png");
-    document.getElementById("tt1").setAttribute("btn-outline-primary:hover-background-color", "red");
+
+    document.getElementById("card1Btn").innerHTML = "Browse Xbox";
+    document.getElementById("card2Btn").innerHTML = "Browse Playstation";
+    document.getElementById("card3Btn").innerHTML = "Browse Nintendo";
+ 
+	
+	//document.getElementById("card1Btn").style.background="green";
+	document.getElementById("card1Btn").style.color="green";
+	document.getElementById("card1Btn").style.borderColor="green";
+   document.getElementById("card1Btn").setAttribute("onmouseenter" , "buttonOn1()");
+	document.getElementById("card1Btn").setAttribute("onmouseleave" , "buttonOff1()");
+	
+	//document.getElementById("card3Btn").style.background="red";
+	document.getElementById("card3Btn").style.color="red";
+	document.getElementById("card3Btn").style.borderColor="red";
+	document.getElementById("card3Btn").setAttribute("onmouseenter" , "buttonOn2()");
+	document.getElementById("card3Btn").setAttribute("onmouseleave" , "buttonOff2()");
 }
 
 $(document).ready(function () {

@@ -1,0 +1,119 @@
+<html>
+	<head>
+		<title> Super League </title>
+		<link href="css/basic.css" rel="stylesheet" type="text/css">
+	</head>
+	<body onload="welcome()">
+	
+		<nav>
+		<div class="dropdown" id="navbar">
+			<!-- Page Links -->
+			<a href="hi.html">
+				<img id="logo" alt= "Super League logo"
+				src="betfred_sl_logo.png"
+				width="150px" height="70px"/>
+				</a>
+				<ul>
+				<div>
+				<a class="dropbtn" href="#">
+				Teams
+				</a>
+				<div class="dropdown-cont">
+					<a href="#"> Leeds Rhinos </a> <br>
+					<a href="#" onclick=> Castleford Tigers </a> <br>
+					</div>
+				<a href="Fixtures">
+				Fixtures
+				</a>
+				<form name="signinForm" onsubmit="signin()" >
+				Email: <input type="email" placeholder="JB360@email.com" alt="Enter Email" id="email"></><br>
+				Password: <input type="password" placeholder="password" alt="Enter Password" id="password"></>
+				<button type="Submit"> Log in </button>
+				</form>
+				<button type="Submit" href="CA.html"> Create Account </button>
+				</ul>
+				</div>
+		</nav>
+		<div id="main"></div>
+		<div>
+		</div>
+		<div id="question of the week?">
+		<form alt="Question of the Week">
+			How good is this page?
+			<ul>
+			<input type="radio" name="QOW"> 0 <br>
+			<input type="radio" name="QOW"> 1 <br>
+			<input type="radio" name="QOW"> 2 <br>
+			<input type="radio" name="QOW"> 3 <br>
+			<input type="radio" name="QOW"> 4 <br>
+			<input type="radio" name="QOW"> 5 <br>
+			<input type="radio" name="QOW"> 6 <br>
+			<input type="radio" name="QOW"> 7 <br>
+			<input type="radio" name="QOW"> 8 <br>
+			<input type="radio" name="QOW"> 9 <br>
+			<input type="radio" name="QOW"> 10 <br>
+			<button onclick=signin()> Submit </>
+			</ul>
+			</form>
+			
+			<table>
+				<tr>
+					<th> Team </th>
+					<th> Played </th>
+					<th> Wins </th>
+					<th> Losses </th>
+					<th> Points </th>
+				</tr>
+				<tbody>
+					<tr>
+						<th> Wigan </th>
+						<th> 3 </th>
+						<th> 1 </th>
+						<th> 2 </th>
+						<th> 2 </th>
+					</tr>
+					</tbody>
+					</table>
+			
+			</div>
+			<footer>
+			<a href="hi.html">
+			Top
+			</a>
+			</footer>
+	</body>
+	
+	<script>
+		function welcome(){
+			let para = document.createElement("h1");
+			let welcome = document.createTextNode("Welcome to Your Home of Rugby League!");
+			para.appendChild(welcome);
+
+			let element = document.getElementById("main");
+			element.appendChild(para);
+
+			let img = document.createElement("img");
+			img.src = "sl_grand_final.jpg";
+			img.style.width = "100%";
+			element.appendChild(img);
+
+			let form = document.createElement("form");
+
+			let o1 = document.createElement("radio");
+			o1.setAttribute('name', "QOW");
+			let t1 = document.createTextNode("0");
+			o1.appendChild(t1);
+			element.appendChild(o1);
+
+
+
+		}
+
+
+
+
+		function signin(){
+		alert("Something should happen!");
+		}
+	</script>
+</html>
