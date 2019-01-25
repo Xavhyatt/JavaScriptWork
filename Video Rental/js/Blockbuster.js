@@ -1,5 +1,6 @@
 let home = document.getElementById("main");
 let findUs = document.getElementById("findus");
+let potw = document.getElementById("pickOfTheWeek");
 
 $(document).ready(function () {
     $('#results').DataTable({
@@ -28,12 +29,14 @@ function showHome() {
     window.location.hre = "Blockbuster.html";
     findUs.style.display = "none";
     home.style.display = "block";
+	
 }
 
 function showFindUs() {
 
     home.style.display = "none";
     findUs.style.display = "block";
+	potw.style.display = "none"
 
 }
 
@@ -199,6 +202,7 @@ function buttonOff2(){
 
 function goToGame(){
 	showHome();
+		potw.style.display = "none"
     document.getElementById("allFilmList").style.display = "none";
     document.getElementById("welcome").innerHTML = "Blockbuster Game";
     document.getElementById("welcome1").innerHTML = "Find what we have in stock for all Gaming Platforms!";
@@ -225,11 +229,13 @@ function goToGame(){
    document.getElementById("card1Btn").setAttribute("onmouseenter" , "buttonOn1()");
 	document.getElementById("card1Btn").setAttribute("onmouseleave" , "buttonOff1()");
 	
+		document.getElementById("card2Btn").setAttribute("onclick" , "");
 	//document.getElementById("card3Btn").style.background="red";
 	document.getElementById("card3Btn").style.color="red";
 	document.getElementById("card3Btn").style.borderColor="red";
 	document.getElementById("card3Btn").setAttribute("onmouseenter" , "buttonOn2()");
 	document.getElementById("card3Btn").setAttribute("onmouseleave" , "buttonOff2()");
+		document.getElementById("card3Btn").setAttribute("onclick" , "");
 }
 
 $(document).ready(function () {
